@@ -33,9 +33,23 @@ const config = {
         docs: {
           routeBasePath: '/', // Hace que la documentación sea la página principal
           sidebarPath: './sidebars.js', // Ruta a la configuración del sidebar
-          editUrl: 'https://github.com/tu-usuario/tu-repositorio/tree/main/', // Cambia esto
+          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/', // Cambia esto
         },
-        blog: false, // Desactiva el blog si no lo usas
+        blog: {
+          showReadingTime: true,
+          feedOptions: {
+            type: ['rss', 'atom'],
+            xslt: true,
+          },
+          // Please change this to your repo.
+          // Remove this to remove the "edit this page" links.
+          editUrl:
+            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          // Useful options to enforce blogging best practices
+          onInlineTags: 'warn',
+          onInlineAuthors: 'warn',
+          onUntruncatedBlogPosts: 'warn',
+        },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -63,7 +77,7 @@ const config = {
             position: 'left',
           },
           {
-            href: 'https://github.com/tu-usuario/tu-repositorio', // Cambia esto
+            href: 'https://github.com/Yordaw/GestorDeGastos', // Cambia esto
             label: 'GitHub',
             position: 'right',
           },
@@ -79,7 +93,7 @@ const config = {
             items: [
               {
                 label: 'Ir a Documentación',
-                to: '/docs/intro.md',
+                to: '/docs/intro',
               },
             ],
           },
@@ -88,11 +102,11 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/tu-usuario/tu-repositorio', // Cambia esto
+                href: 'https://github.com/Yordaw/GestorDeGastos', // Cambia esto
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/tu-usuario', // Cambia esto
+                href: 'https://x.com/docusaurus', // Cambia esto
               },
             ],
           },
