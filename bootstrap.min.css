@@ -18,6 +18,10 @@
   --bs-black: #000;
   --bs-white: #fff;
   --bs-gray: #6c757d;
+/*MODIFICAT*/
+  --bs-SpendSmart: #71d6b6;
+
+
   --bs-gray-dark: #343a40;
   --bs-gray-100: #f8f9fa;
   --bs-gray-200: #e9ecef;
@@ -7378,6 +7382,7 @@ fieldset:disabled .btn {
 }
 .d-flex {
   display: flex !important;
+
 }
 .d-inline-flex {
   display: inline-flex !important;
@@ -7865,6 +7870,7 @@ fieldset:disabled .btn {
 .mx-auto {
   margin-right: auto !important;
   margin-left: auto !important;
+  
 }
 .my-0 {
   margin-top: 0 !important;
@@ -8637,12 +8643,23 @@ fieldset:disabled .btn {
 .bg-body-tertiary {
   /*--bs-bg-opacity: 1;*/
   background-color: #67d3b1 !important;
- 
+
+  /*MODIFICAT */
+
+  width: 100%;
+  border-radius: 20px;
+  /*-----------*/
   /*background-color: rgba(
     var(--bs-tertiary-bg-rgb),
     var(--bs-bg-opacity)
   ) !important;*/
 }
+header .bg-body-tertiary {
+  /*MODIFICAT */
+
+  border-radius: 5px;
+}
+
 .bg-opacity-10 {
   --bs-bg-opacity: 0.1;
 }
@@ -9817,6 +9834,7 @@ fieldset:disabled .btn {
   }
   .p-md-1 {
     padding: 0.25rem !important;
+
   }
   .p-md-2 {
     padding: 0.5rem !important;
@@ -9967,6 +9985,7 @@ fieldset:disabled .btn {
   }
   .gap-md-5 {
     gap: 3rem !important;
+
   }
   .row-gap-md-0 {
     row-gap: 0 !important;
@@ -10390,6 +10409,7 @@ fieldset:disabled .btn {
   }
   .p-lg-5 {
     padding: 3rem !important;
+    
   }
   .px-lg-0 {
     padding-right: 0 !important;
