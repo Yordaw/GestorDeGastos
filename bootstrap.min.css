@@ -8250,6 +8250,8 @@ fieldset:disabled .btn {
 }
 .text-center {
   text-align: center !important;
+  /*MODIFICAT*/
+  border-radius: 5px;
 }
 .text-decoration-none {
   text-decoration: none !important;
@@ -8641,13 +8643,12 @@ fieldset:disabled .btn {
   ) !important;
 }
 .bg-body-tertiary {
-  /*--bs-bg-opacity: 1;*/
+  --bs-bg-opacity: 1;
   background-color: #67d3b1 !important;
 
   /*MODIFICAT */
-
-  width: 100%;
-  border-radius: 20px;
+  max-width:100%;
+ 
   /*-----------*/
   /*background-color: rgba(
     var(--bs-tertiary-bg-rgb),
@@ -8656,8 +8657,8 @@ fieldset:disabled .btn {
 }
 header .bg-body-tertiary {
   /*MODIFICAT */
-
   border-radius: 5px;
+  box-sizing: border-box;
 }
 
 .bg-opacity-10 {
@@ -11773,3 +11774,4 @@ header .bg-body-tertiary {
   }
 }
 /*# sourceMappingURL=bootstrap.min.css.map */
+

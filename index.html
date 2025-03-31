@@ -26,54 +26,18 @@
   </head>
   <body>
     <header>
-    <svg class="d-none">
-      <symbol
-        id="aperture"
-        fill="none"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        viewBox="0 0 24 24"
+      <div
+        class="overflow-hidden p-3 p-md-5 m-m d-3 text-center bg-body-tertiary"
       >
-        <circle cx="12" cy="12" r="10"></circle>
-        <path
-          d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"
-        ></path>
-      </symbol>
-
-      <symbol id="cart" viewBox="0 0 16 16">
-        <path
-          d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
-        ></path>
-      </symbol>
-      <symbol id="chevron-right" viewBox="0 0 16 16">
-        <path
-          fill-rule="evenodd"
-          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-        ></path>
-      </symbol>
-    </svg>
-    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
         <div class="col-md-6 p-lg-5 mx-auto my-5">
-          <!--<h1 class="display-3 fw-bold">Designed for engineers</h1>
-      <h3 class="fw-normal text-muted mb-3">Build anything you want with Aperture</h3>-->
-          <div class="d-flex gap-3 justify-content-center lead fw-normal">
-            <!-- <a class="icon-link" href="#">
-          Learn more
-          <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
-        </a>
-        <a class="icon-link" href="#">
-          Buy
-          <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
-        </a>-->
-            <img src="./SpendSmart.png" class="img-fluid" alt="..." />
-          </div>
+          <!--<div class="d-flex gap-3 justify-content-center lead fw-normal">-->
+          <img src="./SpendSmart.png" class="img-fluid" alt="..." />
+          <!--</div>-->
         </div>
-        <div class="product-device shadow-sm d-none d-md-block"></div>
+        <!-- <div class="product-device shadow-sm d-none d-md-block"></div>
         <div
           class="product-device product-device-2 shadow-sm d-none d-md-block"
-        ></div>
+        ></div>-->
       </div>
 
       <nav
@@ -82,9 +46,20 @@
       >
         <div class="container">
           <a class="navbar-brand d-md-none" href="#">
-            <svg class="bi" width="24" height="24">
-              <use xlink:href="#aperture"></use>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 100 100"
+              width="2em"
+              height="2em"
+              fill="currentColor"
+              class= "bi"
+            >
+              <path
+              style="display:inline" fill="currentColor"
+       d="m 336.50635,408.06455 c -4.62932,-1.47034 -7.68151,-9.10663 -7.367,-15.2033 0.36354,-7.04715 0.50864,-7.78823 4.92943,-4.47764 0.97114,0.72725 10.08558,6.62175 22.76239,7.72997 5.17499,0.4524 5.1914,1.90214 3.33751,4.92396 -6.29087,10.25401 -16.58155,9.27596 -23.66233,7.02701 z m 46.43866,0.60379 c -4.58368,-1.03128 -10.66674,-10.92108 -7.26147,-11.67834 19.125,-4.253 26.04803,-9.9496 26.59353,-10.69596 0.80949,-1.10756 8.25071,13.65545 -5.49099,21.52376 -2.38862,1.3677 -9.63427,1.79702 -13.84107,0.85054 z m -31.97445,-18.56552 c -14.19545,-4.53516 -22.88946,-11.27103 -30.18782,-22.56301 -11.97378,-18.52577 -5.1752,-40.17571 10.17202,-51.61562 15.34722,-11.4399 35.54247,-15.37408 58.90189,-7.86217 10.96661,3.52663 21.56461,13.08728 25.27973,20.18872 1.66314,3.17909 5.24931,8.19218 5.80006,15.34 1.14958,14.9198 -6.64613,29.69849 -20.28161,38.92028 -13.63549,9.2218 -33.11076,12.8867 -49.68427,7.5918 z m 56.63216,-56.11848 c 1.75568,-1.33966 2.13425,-4.78577 0.83601,-6.57229 -1.23363,-1.69761 -4.56827,-2.13248 -6.23657,-0.85949 -1.59325,1.21571 -1.66827,4.37103 -0.49015,5.99227 1.18827,1.63519 4.28375,2.66569 5.89071,1.43951 z m -52.14241,-19.05999 c 5.42805,-2.63689 8.00143,-2.45947 14.41228,-2.57447 5.90786,-0.10597 15.33623,4.30744 17.15178,3.01479 5.17916,-3.68752 -14.66159,-7.61923 -18.40427,-7.58846 -13.03246,0.10714 -19.86364,5.82908 -20.28002,6.42711 -1.83447,2.63478 1.92903,3.24287 7.12023,0.72103 z m -64.17087,47.9702 c -1.63296,-0.54574 -3.0149,-1.96772 -3.53973,-3.69029 -0.52483,-1.72259 -0.33683,-3.74581 -0.12055,-5.26331 0.63317,-4.44264 6.88362,-7.74237 7.26372,-8.21898 0.7494,-0.9397 -0.68161,-2.02428 -3.32655,-4.54717 -2.96485,-2.82804 -4.73895,-4.28201 -1.85971,-3.77897 1.24704,0.21788 3.43988,2.01329 4.68066,3.24157 0.42586,0.42157 2.36548,3.49303 3.55361,3.6492 1.18812,0.15618 3.7078,-0.90035 7.25797,-1.54407 1.55441,-0.28185 3.72356,-0.30323 4.76366,0.12635 1.05455,0.43556 1.32955,1.59396 0.63504,2.19379 -0.52841,0.45638 -3.76708,0.14893 -5.06464,0.14893 -2.27243,0 -5.40236,0.89343 -6.12923,1.52735 -0.72687,0.63392 0.6163,1.23866 1.34474,2.93926 1.76674,4.12458 1.08916,8.2489 -0.7846,10.85972 -1.87376,2.61082 -5.14477,3.53626 -8.67439,2.35662 z m 6.87537,-5.43909 c 1.26233,-2.77052 0.58426,-8.47975 -1.45083,-8.87168 -2.26158,-0.43554 -5.19964,2.79344 -5.97677,6.3317 -1.23882,5.64033 5.03482,7.79155 7.4276,2.53998 z m 126.32377,1.03627 c 1.65694,-5.87563 -0.28977,-24.72606 -2.08987,-26.743 -2.41082,-2.70122 0.88415,-2.79557 5.49133,-2.53549 6.97776,0.3939 10.06979,5.99289 10.06979,16.02445 0.0498,5.18097 -1.68613,10.99823 -6.2971,13.0121 -1.79382,0.58324 -7.82254,2.54118 -7.17415,0.24194 z m -21.1227,-47.17569 c -6.40952,-4.52031 -16.67832,-7.29855 -16.31022,-9.159 0.73073,-3.69329 9.68558,-8.85259 10.62184,-8.88717 4.29741,-0.15872 14.57763,2.85934 12.23548,11.21794 -1.2708,4.53523 -4.82004,8.04624 -6.5471,6.82823 z"
+              />
             </svg>
+
             Spend Smart
           </a>
           <button
@@ -116,9 +91,18 @@
               <ul class="navbar-nav flex-grow-1 justify-content-between">
                 <li class="nav-item">
                   <a class="nav-link" href="#">
-                    <svg class="bi" width="24" height="24">
-                      <use xlink:href="#aperture"></use>
-                    </svg>
+                    <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 100 100"
+                    width="2em"
+                    height="2em"
+                    fill="currentColor"
+                    class= "bi"
+                  >
+                    <path
+                      d="M67.2,80.2c-2.3-.7-3.8-4.6-3.7-7.7.2-3.6.3-3.9,2.5-2.2,.5,.4,5.1,3.3,11.5,3.9,2.6,.2,2.6,1,1.7,2.5-3.2,5.2-8.4,4.7-11.9,3.5Zm23.4,.3c-2.3-.5-5.4-5.5-3.7-5.9,9.6-2.1,13.1-5,13.3-5.4,.4-.6,4.1,6.9-2.7,10.9-1.2,.7-4.8,.9-6.9,.4Zm-16.1-9.3c-7.1-2.3-11.4-5.7-15-11.5-5.9-9.4-2.6-20.4,5.1-26.2,7.7-5.8,17.8-7.8,29.5-4,5.5,1.8,10.8,6.5,12.7,10.1,.8,1.6,2.6,4.1,2.9,7.7,.6,7.5-3.4,15-10.2,19.7-6.8,4.7-16.6,6.5-24.9,3.9Zm28.4-27.9c.9-.7,1.1-2.4,.4-3.3-.6-.9-2.3-1.1-3.1-.4-.8,.6-.8,2.2-.2,3,.6,.8,2.1,1.3,2.9,.7Zm-26.2-9.6c2.7-1.3,4-1.2,7.2-1.3,2.9-.1,7.7,2.2,8.6,1.5,2.6-1.9-7.3-3.8-9.2-3.8-6.5,.1-9.9,2.9-10.1,3.2-.9,1.3,1,1.6,3.5,.4Zm-31.1,23.3c-.8-.3-1.5-1-1.8-1.8-.3-.8-.2-1.9-.1-2.6,.3-2.2,3.3-3.8,3.5-4.1,.4-.5-.3-1-1.6-2.3-1.4-1.4-2.3-2.1-.9-1.9,.6,.1,1.7,1,2.3,1.6,.2,.2,1.2,1.7,1.8,1.8,.6,.1,1.9-.5,3.6-.8,.8-.1,1.9-.2,2.4,.1,.5,.2,.6,.8,.3,1.1-.3,.2-1.8,.1-2.5,.1-1.1,0-2.7,.4-3.1,.7-.3,.3,.3,.6,.7,1.5,.9,2.1,.6,4.1-.4,5.4-1,1.3-2.6,1.8-4.3,1.2Zm3.4-2.7c.6-1.3,.3-4.1-.7-4.3-1.1-.2-2.5,1.4-2.8,3.1-.6,2.8,2.3,3.8 3.5,1.2Zm60.7,.5c.8-2.8-.1-11.7-1-12.7-1.2-1.3,.4-1.3,2.6-1.2,3.4,.2,4.9,2.9,4.9,7.8,.02,2.5-.8,5.3-3,6.3-.9,.3-3.8,1.2-3.5,.6Zm-10.2-22.3c-3.1-2.2-8.1-3.6-7.9-4.5,.4-1.8,4.7-4.3,5.2-4.3,2.1,0,7.1,1.4,6,5.5-.6,2.2-2.4,3.9-3.3,3.3Z"
+                    />
+                  </svg>
                   </a>
                 </li>
                 <li class="nav-item">
@@ -142,7 +126,7 @@
         </div>
       </nav>
     </header>
-      <main>
+    <main>
       <div class="px-4 py-5 my-5 text-center">
         <h1 class="display-5 fw-bold text-body-emphasis">
           Estado de tu economía.
@@ -201,7 +185,8 @@
         </div>
       </div>
 
-      <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+      <!--<div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">-->
+      <div class="px-4 py-5 my-5 text-center">
         <div
           class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden"
         >
@@ -241,26 +226,26 @@
             ></path>
           </svg>
           <small class="d-block mb-3 text-body-secondary">© 2024–2025</small>
-        <div class="col-6 col-md">
-          <ul class="list-unstyled text-small">
-            <li>
-              <a class="link-secondary text-decoration-none" href="#"
-                >Yordan Radkov</a
-              >
-            </li>
-            <li>
-              <a class="link-secondary text-decoration-none" href="#"
-                >Jorge Perigüell</a
-              >
-            </li>
-            <li>
-              <a class="link-secondary text-decoration-none" href="#"
-                >Mark Vila</a
-              >
-            </li>
-          </ul>
+          <div class="col-6 col-md">
+            <ul class="list-unstyled text-small">
+              <li>
+                <a class="link-secondary text-decoration-none" href="#"
+                  >Yordan Radkov</a
+                >
+              </li>
+              <li>
+                <a class="link-secondary text-decoration-none" href="#"
+                  >Jorge Perigüell</a
+                >
+              </li>
+              <li>
+                <a class="link-secondary text-decoration-none" href="#"
+                  >Mark Vila</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
 
         <div class="col-6 col-md">
           <h5>Información</h5>
@@ -288,14 +273,14 @@
         <div class="col-6 col-md">
           <ul class="list-unstyled text-small">
             <li>
-              <a class="link-secondary text-decoration-none" href="https://portal.edu.gva.es/ieslluissimarro/tecnic-superior-en-desenvolupament-daplicacions-web/"
+              <a
+                class="link-secondary text-decoration-none"
+                href="https://portal.edu.gva.es/ieslluissimarro/tecnic-superior-en-desenvolupament-daplicacions-web/"
                 >IES LLuís Simarro Lacabra</a
               >
             </li>
             <li>
-              <a class="link-secondary text-decoration-none" 
-                >1er DAW</a
-              >
+              <a class="link-secondary text-decoration-none">1er DAW</a>
             </li>
           </ul>
         </div>
