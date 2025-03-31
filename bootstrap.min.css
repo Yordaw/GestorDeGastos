@@ -657,7 +657,7 @@ progress {
   content: "— ";
 }
 .img-fluid {
-  max-width: 100%;
+  max-width: 95%;
   height: auto;
 }
 .img-thumbnail {
@@ -8648,6 +8648,7 @@ fieldset:disabled .btn {
 
   /*MODIFICAT */
   max-width:100%;
+  margin:1%;
  
   /*-----------*/
   /*background-color: rgba(
@@ -11775,3 +11776,18 @@ header .bg-body-tertiary {
 }
 /*# sourceMappingURL=bootstrap.min.css.map */
 
+/*MODIFICAT*/
+.img-fluid {
+  max-width: 600px;
+}
+
+.navbar-expand-md li {
+  color: #71d6b6 !important;
+}
+.product-device,
+.product-device.product-device-2 {
+  color: #71d6b6 !important;
+}
+.bg-body {
+  padding: 5%;
+}
