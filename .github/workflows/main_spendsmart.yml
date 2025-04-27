@@ -1,45 +1,39 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
-name: Build and deploy PHP app to Azure Web App - spendsmart
+name: Build and deploy static web app to Azure
 
 on:
   push:
     branches:
-      - main
+      - Jorge  # Cambia 'main' por la rama 'Jorge' si esa es la que estás utilizando
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read #This is required for actions/checkout
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          php-version: '8.2'
+          node-version: '18'  # Usa la versión de Node.js que prefieras
 
-      - name: Check if composer.json exists
-        id: check_files
-        uses: andstor/file-existence-action@v1
-        with:
-          files: 'composer.json'
+      - name: Install dependencies (if needed)
+        run: |
+          npm install
 
-      - name: Run composer install if composer.json exists
-        if: steps.check_files.outputs.files_exists == 'true'
-        run: composer validate --no-check-publish && composer install --prefer-dist --no-progress
+      - name: Build (for static sites this might be a no-op)
+        run: |
+          echo "No build required for static HTML"
 
       - name: Zip artifact for deployment
-        run: zip release.zip ./* -r
+        run: zip -r release.zip ./*
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
-          name: php-app
+          name: static-web-app
           path: release.zip
 
   deploy:
@@ -48,31 +42,27 @@ jobs:
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-    permissions:
-      id-token: write #This is required for requesting the JWT
-      contents: read #This is required for actions/checkout
 
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
-          name: php-app
+          name: static-web-app
 
       - name: Unzip artifact for deployment
         run: unzip release.zip
-      
+
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_7B648FE1AFA045759C961552D43235A2 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_C477B252F753460497828986CFACA8AC }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_A310840603E347CCACF711C0299BB7D1 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID }}
 
-      - name: 'Deploy to Azure Web App'
+      - name: Deploy to Azure Static Web App
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
-          app-name: 'spendsmart'
+          app-name: 'gestordegastos-web'  # El nombre de tu Azure Static Web App
           slot-name: 'Production'
-          package: .
-          
+          package: ./
