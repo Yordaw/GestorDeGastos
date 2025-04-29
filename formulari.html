@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulari de Registre</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Formulari de Registre</h2>
+        <form action="processar_registre_todo.php" method="post">
+            <div class="form-group">
+                <label for="nom">Nom:</label>
+                <input type="text" class="form-control" id="nom" name="nom">
+            </div>
+            <div class="form-group">
+                <label for="cognoms">Cognoms:</label>
+                <input type="text" class="form-control" id="cognoms" name="cognoms">
+            </div>
+            <div class="form-group">
+                <label for="correu">Correu electrònic:</label>
+                <input type="email" class="form-control" id="correu" name="correu">
+            </div>
+            <div class="form-group">
+                <label for="contrasenya">Contrasenya:</label>
+                <input type="password" class="form-control" id="contrasenya" name="contrasenya">
+            </div>
+            <div class="form-group">
+                <label for="confirmacio_contrasenya">Confirmació de contrasenya:</label>
+                <input type="password" class="form-control" id="confirmacio_contrasenya" name="confirmacio_contrasenya">
+            </div>
+            <button type="submit" class="btn btn-primary">Registrar</button>
+            <button formaction="listadoUsuarios.php" type="submit" class="btn btn-primary">ListaUsuarios</button>
+        </form>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

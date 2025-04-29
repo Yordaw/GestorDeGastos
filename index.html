@@ -4,12 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
-    <link rel="stylesheet" type="text/css" href="./bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
     <title>Gestor de Gastos</title>
-    <style>
-
-      /*71d6b6*/
-    </style>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -130,83 +127,48 @@
         </div>
       </nav>
     </header>
+    <!--Empieza el formulario-->
     <main>
       <div class="px-4 py-5 my-5 text-center">
         <h1 class="display-5 fw-bold text-body-emphasis">
-          Estado de tu economía
+          Formulario de Registro
         </h1>
-        <div class="col-lg-6 mx-auto">
-          <p class="lead mb-4">Gráfico de tu economía</p>
-          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-            <button type="button" class="btn btn-secondary btn-sm px-4 gap-3">
-              Primary button
-            </button>
-            <button type="button" class="btn btn-outline-secondary btn-sm px-4">
-              Secondary
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="px-4 py-5 my-5 text-center">
-        <h1 class="display-5 fw-bold text-body-emphasis">
-          Tus gastos mensuales
-        </h1>
-        <div class="col-lg-6 mx-auto">
-          <table class="table" id="taulaMoviments">
-            <thead>
-              <tr>
-                <th scope="col">Fecha</th>
-                <th scope="col">Descripción</th>
-                <th scope="col">Cantidad</th>
-                <th scope="col">Categoría</th>
-              </tr>
-            </thead>
-            <tbody class="table-group-divider">
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-            <button type="button" class="btn btn-outline-secondary btn-sm px-4">
-              Desplegar
-            </button>
-          </div>
-        </div>
-      </div>
 
-      <!--<div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">-->
-      <div class="px-4 py-5 my-5 text-center">
-        <div
-          class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden"
-        >
-          <div class="my-3 p-3">
-            <h2 class="display-5 fw-bold text-body-emphasis">Estado</h2>
-          </div>
-          <div
-            class="bg-body shadow-sm mx-auto"
-            style="width: 80%; height: 300px; border-radius: 21px 21px 0 0"
-          >
-            <p class="lead">Alerta! te quedan pocos duros.</p>
-          </div>
+            <!---------------------------------------------------------------->
+            <div class="container mt-5">
+                
+                <form action="processar_registre_todo.php" method="post">
+                    <div class="form-group">
+                        <label for="nom">Nom:</label>
+                        <input type="text" class="form-control" id="nom" name="nom">
+                    </div>
+                    <div class="form-group">
+                        <label for="cognoms">Cognoms:</label>
+                        <input type="text" class="form-control" id="cognoms" name="cognoms">
+                    </div>
+                    <div class="form-group">
+                        <label for="correu">Correu electrònic:</label>
+                        <input type="email" class="form-control" id="correu" name="correu">
+                    </div>
+                    <div class="form-group">
+                        <label for="contrasenya">Contrasenya:</label>
+                        <input type="password" class="form-control" id="contrasenya" name="contrasenya">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmacio_contrasenya">Confirmació de contrasenya:</label>
+                        <input type="password" class="form-control" id="confirmacio_contrasenya" name="confirmacio_contrasenya">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Registrar</button>
+                    <button formaction="listadoUsuarios.php" type="submit" class="btn btn-primary">ListaUsuarios</button>
+                </form>
+            </div>
+            <!---------------------------------------------------------------->
+        
         </div>
       </div>
     </main>
-
+    <!--Acaba el formulario-->
+    <hr style="border: 1px solid black; width: 80%;margin-left: 10%;">
     <footer class="container py-5">
       <div class="row">
         <div class="col-6 col-md">
@@ -291,8 +253,9 @@
         </div>
       </div>
     </footer>
-    <script
-      src="./script.js"
-    ></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>
