@@ -4,59 +4,78 @@
     <meta charset="UTF-8">
     <title>Listado de Usuarios</title>
     <style>
-        body{
+        body {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
         }
-        table{
+        table {
             border: 2px solid black;
             border-collapse: collapse;
         }
-        thead th{
+        thead th {
             background-color: black;
             color: white;
         }
-        tr, th, td{
+        tr, th, td {
             border: 2px solid black;
-            border-collapse: collapse;
             padding: 20px;
             text-align: center;
         }
     </style>
 </head>
 <body>
+<?php
+    $serverName = "tcp:azureqrra.database.windows.net,1433";
+    $connectionOptions = array(
+        "Database" => "spendsmart",
+        "Uid" => "spendsmart",
+        "PWD" => "gestorgastos123@",
+        "LoginTimeout" => 30,
+        "Encrypt" => 1,
+        "TrustServerCertificate" => 0
+    );
+
+
+    $conn = sqlsrv_connect($serverName, $connectionOptions);
+    ?>
     <table>
         <thead>
-            <th>Nombre</th>
-            <th>Apellidos</th>
-            <th>Correo</th>
-            <th>Contrasenya</th>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Correo</th>
+                <th>Contrasenya</th>
+            </tr>
         </thead>
         <tbody>
             <?php
-            $connexioBD= mysqli_connect("localhost", "spendsmart","spendsmart","contactes");
-            if(!$connexioBD){
-                die("Connexio fallida: ".mysqli_connect_error());
-            }else{
-                $sql="SELECT * FROM usuaris";
-                $result=mysqli_query($connexioBD,$sql);
-                if($result){
-                   while($row = mysqli_fetch_assoc($result)){
-                        echo 
-                        "<tr>
-                            <td>".$row["nom"]."</td>"
-                            ."<td>".$row["cognoms"]."</td>"
-                            ."<td>".$row["correu"]."</td>"
-                            ."<td>".$row["contrasenya"]."</td>
-                        </tr>";
-                   }
-                }else{
-                    echo "Error: ". mysqli_connect_error();
+                if (!$conn) {
+                    die("Connection failed: " . print_r(sqlsrv_errors(), true));
+                } else {
+                    $sql = "SELECT nom, cognoms, email, contrasenya FROM usuaris";
+                    $stmt = sqlsrv_query($conn, $sql);
+
+                    if ($stmt === false) {
+                        die("Query failed: " . print_r(sqlsrv_errors(), true));
+                    }
+
+                    while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
+                        echo "
+                    <tr>
+                        <td>{$row['nom']}</td>
+                        <td>{$row['cognoms']}</td>
+                        <td>{$row['email']}</td>
+                        <td>{$row['contrasenya']}</td>
+                    </tr>
+                    ";
+                    }
+
+                    sqlsrv_free_stmt($stmt);
+                    sqlsrv_close($conn);
                 }
-            }
             ?>
         </tbody>
     </table>
