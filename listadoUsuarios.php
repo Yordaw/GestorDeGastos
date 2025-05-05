@@ -28,7 +28,7 @@
 </head>
 <body>
 <?php
-    $serverName = "tcp:azureqrra.database.windows.net,1433";
+    $serverName = "tcp:gestordegastos.database.windows.net,1433";
     $connectionOptions = array(
         "Database" => "spendsmart",
         "Uid" => "spendsmart",

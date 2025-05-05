@@ -28,7 +28,7 @@
                 "Encrypt" => 1,
                 "TrustServerCertificate" => 0
             );
-            $serverName = "tcp:azureqrra.database.windows.net,1433";
+            $serverName = "tcp:gestordegastos.database.windows.net,1433";
             $conn = sqlsrv_connect($serverName, $connectionInfo);
 
             if (!$conn) {
