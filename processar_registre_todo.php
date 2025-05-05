@@ -35,7 +35,7 @@
                 die("Connection failed: " . print_r(sqlsrv_errors(), true));
             }
 
-            $sql = "INSERT INTO usuaris (nom, cognoms, email, contrasenya) VALUES (?, ?, ?, ?)";
+            $sql = "INSERT INTO usuaris (nom, cognoms, correu, contrasenya) VALUES (?, ?, ?, ?)";
             $contrasenya_hashed = password_hash($contrasenya, PASSWORD_DEFAULT);
             $params = array($nom, $cognoms, $correu, $contrasenya_hashed);
 
@@ -53,7 +53,7 @@
                         <a href='./formulari.html'>Nuevo usuario</a>
                         </h3> 
                         <h3>
-                        <a href='./listaUsuaris.php'>Lista usuarios</a>
+                        <a href='./listadoUsuarios.php'>Lista usuarios</a>
                         </h3>";
                 };
                 $missatgeBenvinguda($nom, $cognoms, $contrasenya_hashed, $adresaIP);

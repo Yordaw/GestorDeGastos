@@ -55,7 +55,7 @@
                 if (!$conn) {
                     die("Connection failed: " . print_r(sqlsrv_errors(), true));
                 } else {
-                    $sql = "SELECT nom, cognoms, email, contrasenya FROM usuaris";
+                    $sql = "SELECT nom, cognoms, correu, contrasenya FROM usuaris";
                     $stmt = sqlsrv_query($conn, $sql);
 
                     if ($stmt === false) {
@@ -67,7 +67,7 @@
                     <tr>
                         <td>{$row['nom']}</td>
                         <td>{$row['cognoms']}</td>
-                        <td>{$row['email']}</td>
+                        <td>{$row['correu']}</td>
                         <td>{$row['contrasenya']}</td>
                     </tr>
                     ";
