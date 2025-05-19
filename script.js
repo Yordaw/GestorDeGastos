@@ -1,8 +1,7 @@
 window.onload = inici;
 
 function inici(){
-const nomUsu = document.getElementById();
-    obtindreDades(nomUsu);
+    fetchDadesUsu(idUsuari);
 
     taula();
 }
@@ -12,33 +11,41 @@ function taula(){
         "id": Array(),
         "descripcion":  Array(),
         "cantidad": Array(),
-        "categoria": Array()
+        "categoria": Array(),
     };
 
+
+    mostrarTaula(dadesEcoUsuari);
+     
 }
+
 
 function mostrarTaula(dadesEcoUsuari) {
     const taula = document.getElementById('taulaMoviments');
 
     dadesEcoUsuari.forEach(element => {
-        element.forEach(date => {
-            let row = document.createElement('td');
-            row.innerHTML = date;
-            row.appendChild(row);
-        })
+        
     });
 
 }
 
-function obtindreDades(nomUsu){
-    fetch(`connect.php?nomUsu=${nomUsu}`)
-    .then(response=>response.json())
-    .then(data => {
-        console.log('Taula de '+nomUsu+' carregada.');
-        mostrarTaula(data);
-    })
-    .catch(error=>{
-        console.log('Error al carregar la taula ')
-    });
+async function fetchDadesUsu() {
+    const id = 1; // Supongamos que este ID proviene del login
+    const resposta = await fetch(`getUserData.php?user_id=${id}`);
+    const dades = await response.json();
+
+    if (data.error) {
+        document.body.innerHTML = `<p>${dades.error}</p>`;
+        return;
+    }
+
+    // Mostrar nombre y resumen
+    document.getElementById('userName').textContent = `Bienvenido, ${data.user}`;
+    document.getElementById('userSummary').textContent = data.summary;
+
+    // Crear tabla
+
+
+
 }
 
